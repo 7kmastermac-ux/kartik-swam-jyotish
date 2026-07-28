@@ -87,15 +87,130 @@
             header h1 { font-size: 2rem; }
             .grid { grid-template-columns: 1fr; }
         }
+        /* SIDEBAR STYLES - BRAND MATCHED */
+.side-menu {
+  height: 100%;
+  width: 0; /* Hidden by default */
+  position: fixed;
+  z-index: 10000; 
+  top: 0;
+  right: 0; /* Slides in from the right side */
+  background-color: #2a1f24; /* Matches your scrolling ticker background */
+  overflow-x: hidden;
+  transition: 0.4s ease; 
+  display: flex;
+  flex-direction: column;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.side-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.side-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  background-color: white; /* Adds a white background if your logo is dark */
+  border-radius: 4px;
+  padding: 2px;
+}
+
+.close-btn {
+  color: #ffffff; 
+  font-size: 35px;
+  cursor: pointer;
+  line-height: 1;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  color: #cccccc;
+}
+
+.side-menu-links {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+  flex-grow: 1;
+}
+
+.side-menu-links a {
+  padding: 12px 25px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  color: #f1f1f1;
+  transition: 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.side-menu-links a:hover {
+  background-color: rgba(255,255,255,0.1);
+  padding-left: 30px; /* Slight indent effect on hover */
+}
+
+.side-menu-footer {
+  padding: 25px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.book-btn {
+  color: #ffffff; 
+  background-color: #25D366; /* WhatsApp Green */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+.book-btn:hover {
+  background-color: #1ebd5c;
+}
     </style>
 </head>
 <body>
+    <!-- SIDEBAR MENU START -->
+<div id="sideMenu" class="side-menu">
+  <div class="side-menu-header">
+    <img src="images/33.png" alt="Kartik Swami Logo" class="side-logo">
+    <span class="close-btn" onclick="closeMenu()">&times;</span>
+  </div>
+  
+  <div class="side-menu-links">
+    <a href="#home">Home</a>
+    <a href="#services">Astrology</a>
+    <a href="#kundli">Kundli</a>
+    <a href="#vastu">Vastu</a>
+    <a href="#numerology">Numerology</a>
+    <a href="#tarot">Tarot</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact Us</a>
+  </div>
+  
+  <div class="side-menu-footer">
+    <a href="https://wa.me/919837201252?text=Hello%20Pandit%20Ji,%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" class="book-btn">Book Consultation</a>
+  </div>
+</div>
+<!-- SIDEBAR MENU END -->
+
    <!-- TOP NAVIGATION BAR START -->
 <div style="background-color: #ffffff; padding: 12px 20px; display: flex; align-items: center; border-bottom: 1px solid #e0e0e0; position: sticky; top: 0; z-index: 1000;">
   <!-- Small Logo Icon -->
   <img src="images/33.png" alt="Kartik Swami Logo" style="width: 25px; height: 25px; object-fit: contain; margin-right: 12px; border-radius: 4px;"> 
   <!-- Site Title -->
   <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 600; font-size: 15px; color: #333333;">Kartik Swami Jyotish Kendra</span>
+    <!-- HAMBURGER MENU BUTTON -->
+<span style="font-size: 28px; cursor: pointer; color: #333333; margin-left: auto;" onclick="openMenu()">&#9776;</span>
 </div>
 <!-- TOP NAVIGATION BAR END -->
 
@@ -407,5 +522,15 @@
   Chat with Pandit Ji
 </a>
 <!-- FLOATING WHATSAPP BUTTON END -->
+    <script>
+  function openMenu() {
+    document.getElementById("sideMenu").style.width = "280px";
+  }
+
+  function closeMenu() {
+    document.getElementById("sideMenu").style.width = "0";
+  }
+</script>
+
 </body>
 </html>
