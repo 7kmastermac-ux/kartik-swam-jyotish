@@ -442,7 +442,7 @@
     font-weight: bold;
     cursor: pointer;
     z-index: 99999;
-    padding: 15x;
+    padding: 15px;
   }
   .close-modal:hover {
     color: #ff9900;
@@ -504,11 +504,11 @@
 <script>
   function openGallery() {
     document.getElementById("fullGallery").style.display = "block";
-    document.body.style.overflow = "hidden"; /* Stops the background page from scrolling */
+    document.body.style.overflowY = "hidden"; /* Stops the background page from scrolling */
   }
   function closeGallery() {
     document.getElementById("fullGallery").style.display = "none";
-    document.body.style.overflow = "auto"; /* Turns background scrolling back on */
+    document.body.style.overflowY = "auto"; /* Turns background scrolling back on */
   }
 </script>
 <!-- LIGHTBOX GALLERY END -->
