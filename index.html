@@ -2,576 +2,1368 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="images/33.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kartik Swami Jyotish Kendra | Expert Astrology & Vastu</title>
-   <style>
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 70px; /* This stops the navbar from hiding the title! */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#b94700">
+  <meta name="description" content="Kartik Swami Jyotish Kendra offers confidential consultations in Vedic astrology, Kundli analysis, Vastu, numerology, Tarot, gemstones, and career guidance in Agra and online.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Replace the URL values below with your final domain before publishing. -->
+  <link rel="canonical" href="https://www.example.com/">
+  <link rel="icon" type="image/png" href="images/33.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kartik Swami Jyotish Kendra | Astrology & Vastu">
+  <meta property="og:description" content="Confidential guidance in Kundli, Vastu, numerology, Tarot, gemstones, career, and business.">
+  <meta property="og:url" content="https://www.example.com/">
+  <meta property="og:image" content="https://www.example.com/images/31.png">
+
+  <title>Kartik Swami Jyotish Kendra | Astrology & Vastu in Agra</title>
+
+  <style>
+    :root {
+      --primary: #b94700;
+      --primary-light: #e97820;
+      --secondary: #7d3294;
+      --secondary-dark: #5f2473;
+      --dark: #251d21;
+      --heading: #283747;
+      --light: #fffaf5;
+      --surface: #ffffff;
+      --surface-soft: #fff3e8;
+      --text: #333333;
+      --muted: #626262;
+      --green: #168a45;
+      --green-hover: #0f6e36;
+      --danger: #c0392b;
+      --border: #eadfd6;
+      --shadow-sm: 0 5px 18px rgba(44, 33, 38, 0.08);
+      --shadow-lg: 0 18px 50px rgba(18, 12, 15, 0.20);
+      --radius: 14px;
+      --nav-height: 64px;
+      --container: 1120px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--light);
+      color: var(--text);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    body.no-scroll { overflow: hidden; }
+    img { max-width: 100%; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    a { color: inherit; }
+
+    :focus-visible {
+      outline: 3px solid #146c94;
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 20000;
+      padding: 10px 15px;
+      border-radius: 6px;
+      background: white;
+      color: #111;
+      font-weight: 700;
+      transform: translateY(-150%);
+      transition: transform 0.2s ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .container {
+      width: min(100% - 32px, var(--container));
+      margin-inline: auto;
+    }
+
+    #home, #about, #services, #kundli, #vastu, #numerology, #tarot,
+    #gemstone, #career, #process, #gallery, #contact {
+      scroll-margin-top: calc(var(--nav-height) + 18px);
+    }
+
+    /* Top navigation */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: var(--nav-height);
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 3px 14px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(10px);
+    }
+    .topbar-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand {
+      min-width: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--heading);
+      text-decoration: none;
+      font-weight: 750;
+    }
+    .brand img {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 auto;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .brand span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .menu-toggle {
+      width: 44px;
+      height: 44px;
+      margin-left: auto;
+      border: 0;
+      border-radius: 9px;
+      background: transparent;
+      color: var(--heading);
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .menu-toggle { display: none; }
+    .menu-toggle:hover { background: var(--surface-soft); }
+    @media (max-width: 980px) { .menu-toggle { display: inline-block; } }
+
+
+    /* Desktop navigation */
+    .desktop-nav {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .desktop-nav a {
+      padding: 9px 11px;
+      border-radius: 7px;
+      color: var(--heading);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+    .desktop-nav a:hover,
+    .desktop-nav a:focus-visible {
+      background: var(--surface-soft);
+      color: var(--primary);
+    }
+    .desktop-nav .nav-cta {
+      margin-left: 5px;
+      padding-inline: 15px;
+      background: var(--green);
+      color: white;
+    }
+    .desktop-nav .nav-cta:hover,
+    .desktop-nav .nav-cta:focus-visible {
+      background: var(--green-hover);
+      color: white;
+    }
+
+    /* Sidebar and backdrop */
+    .page-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 9000;
+      background: rgba(0, 0, 0, 0.55);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .page-backdrop.is-visible { opacity: 1; visibility: visible; }
+    .side-menu {
+      position: fixed;
+      z-index: 10000;
+      top: 0;
+      right: 0;
+      width: min(340px, 88vw);
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      background: var(--dark);
+      color: white;
+      box-shadow: -8px 0 30px rgba(0, 0, 0, 0.35);
+      transform: translateX(105%);
+      visibility: hidden;
+      transition: transform 0.35s ease, visibility 0.35s ease;
+    }
+    .side-menu.is-open { transform: translateX(0); visibility: visible; }
+    .side-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .side-logo {
+      width: 44px;
+      height: 44px;
+      padding: 3px;
+      border-radius: 8px;
+      background: white;
+      object-fit: contain;
+    }
+    .icon-button {
+      width: 44px;
+      height: 44px;
+      border: 0;
+      border-radius: 9px;
+      background: transparent;
+      color: white;
+      font-size: 34px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .icon-button:hover { background: rgba(255, 255, 255, 0.10); }
+    .side-menu-links {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding-block: 14px;
+    }
+    .side-menu-links a {
+      padding: 12px 25px;
+      color: #f7f2f4;
+      text-decoration: none;
+      font-size: 1.02rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      transition: background-color 0.2s ease, padding-left 0.2s ease;
+    }
+    .side-menu-links a:hover {
+      padding-left: 31px;
+      background: rgba(255, 255, 255, 0.09);
+    }
+    .side-menu-footer {
+      padding: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      text-align: center;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(255, 181, 98, 0.22), transparent 35%),
+        linear-gradient(135deg, #321d23 0%, #5d2920 52%, #8e3f13 100%);
+      color: white;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, black, transparent);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.98fr);
+      align-items: center;
+      gap: clamp(30px, 5vw, 65px);
+      min-height: 590px;
+      padding-block: 70px;
+    }
+    .hero-copy { max-width: 650px; }
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 17px;
+      padding: 7px 12px;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      color: #ffe2c4;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      margin: 0;
+      color: white;
+      font-size: clamp(2.25rem, 5vw, 4.25rem);
+      letter-spacing: -1.8px;
+      line-height: 1.08;
+    }
+    .hero-lead {
+      max-width: 590px;
+      margin: 21px 0 0;
+      color: #f5e9e4;
+      font-size: clamp(1.02rem, 2vw, 1.18rem);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 28px;
+    }
+    .hero-actions .btn { width: auto; min-width: 178px; }
+    .btn-primary {
+      border-color: var(--primary-light);
+      background: var(--primary-light);
+      color: white;
+    }
+    .btn-primary:hover { border-color: #ff8a33; background: #ff8a33; }
+    .btn-secondary {
+      border-color: rgba(255,255,255,0.72);
+      background: transparent;
+      color: white;
+    }
+    .btn-secondary:hover { background: white; color: var(--dark); }
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+      color: #f5e9e4;
+      font-size: 0.92rem;
+      font-weight: 650;
+    }
+    .hero-points li::before { content: "✓"; margin-right: 7px; color: #8ef0b4; font-weight: 900; }
+    .hero-media {
+      position: relative;
+      align-self: stretch;
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+    }
+    .hero-media-card {
+      position: relative;
+      width: 100%;
+      padding: 11px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0 28px 70px rgba(0,0,0,0.35);
+      transform: rotate(1.2deg);
+    }
+    .hero-media img {
+      width: 100%;
+      height: auto;
+      max-height: 470px;
+      display: block;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+    .experience-badge {
+      position: absolute;
+      left: -24px;
+      bottom: 28px;
+      max-width: 170px;
+      padding: 14px 16px;
+      border-radius: 13px;
+      background: white;
+      color: var(--dark);
+      box-shadow: var(--shadow-lg);
+      font-weight: 750;
+      line-height: 1.25;
+    }
+    .experience-badge strong {
+      display: block;
+      color: var(--primary);
+      font-size: 1.55rem;
+    }
+
+    /* Trust strip */
+    .trust-strip {
+      position: relative;
+      z-index: 2;
+      margin-top: -1px;
+      background: white;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(44,33,38,0.06);
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--border);
+    }
+    .trust-item {
+      min-width: 0;
+      padding: 18px 16px;
+      background: white;
+      text-align: center;
+    }
+    .trust-item strong { display: block; color: var(--heading); font-size: 1rem; }
+    .trust-item span { color: var(--muted); font-size: 0.84rem; }
+
+    /* Accessible CSS ticker */
+    .ticker {
+      overflow: hidden;
+      background: var(--dark);
+      color: white;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker-scroll 28s linear infinite;
+    }
+    .ticker:hover .ticker-track { animation-play-state: paused; }
+    .ticker-item {
+      flex: none;
+      padding: 12px 24px;
+      white-space: nowrap;
+      font-weight: 650;
+      letter-spacing: 0.35px;
+    }
+    @keyframes ticker-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* Sections */
+    main { display: block; }
+    .section { padding: 72px 0; }
+    .section:nth-of-type(even) { background: rgba(255, 255, 255, 0.42); }
+    .section-heading {
+      max-width: 770px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+    .eyebrow {
+      margin: 0 0 5px;
+      color: var(--secondary);
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+    h1, h2, h3, h4 { line-height: 1.25; }
+    h1, h2, h3 { color: var(--heading); }
+    h2 {
+      position: relative;
+      display: inline-block;
+      margin: 0;
+      padding-bottom: 11px;
+      color: var(--primary);
+      font-size: clamp(1.75rem, 4vw, 2.35rem);
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 68px;
+      height: 3px;
+      border-radius: 5px;
+      background: var(--secondary);
+      transform: translateX(-50%);
+    }
+    .section-intro { margin: 16px 0 0; color: var(--muted); }
+
+    .text-box {
+      padding: clamp(22px, 4vw, 36px);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--primary);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+    .text-box p { margin: 0 0 16px; }
+    .text-box p:last-child { margin-bottom: 0; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .card {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-top: 5px solid var(--secondary);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(44, 33, 38, 0.12);
+    }
+    .card h3 { margin: 0 0 12px; font-size: 1.28rem; }
+    .card p { margin: 0 0 22px; color: var(--muted); }
+    .pricing-box {
+      margin: 4px 0 16px;
+      padding: 15px;
+      border: 1px dashed #ceb8a8;
+      border-radius: 9px;
+      background: #fbf8f5;
+      text-align: center;
+    }
+    .original-price { color: #767676; font-size: 1.05rem; text-decoration: line-through; }
+    .discount {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 3px 8px;
+      border-radius: 5px;
+      background: var(--danger);
+      color: white;
+      font-size: 0.76rem;
+      font-weight: 800;
+      vertical-align: 2px;
+    }
+    .final-price {
+      display: block;
+      margin-top: 3px;
+      color: var(--primary);
+      font-size: 1.85rem;
+      font-weight: 800;
+    }
+
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 11px 18px;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 750;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-whatsapp {
+      width: 100%;
+      border-color: var(--green);
+      background: var(--green);
+      color: white;
+    }
+    .btn-whatsapp:hover { background: var(--green-hover); border-color: var(--green-hover); }
+
+    /* Process */
+    .process-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: process;
+    }
+    .process-list li {
+      position: relative;
+      min-height: 52px;
+      margin-bottom: 18px;
+      padding-left: 67px;
+      counter-increment: process;
+    }
+    .process-list li:last-child { margin-bottom: 0; }
+    .process-list li::before {
+      content: counter(process);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--secondary);
+      color: white;
+      font-weight: 800;
+    }
+
+    /* Gallery */
+    .gallery-preview {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 850px;
+      margin: 0 auto 22px;
+    }
+    .gallery-preview-button {
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+      border-radius: 13px;
+      background: #ddd;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+    }
+    .gallery-preview-button img {
+      width: 100%;
+      height: 300px;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .gallery-preview-button:hover img { transform: scale(1.035); }
+    .gallery-action { text-align: center; }
+    .view-more-btn {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: white;
+    }
+    .view-more-btn:hover { background: #963a00; border-color: #963a00; }
+
+    .gallery-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 12000;
+      display: none;
+      overflow-y: auto;
+      padding: 88px 22px 35px;
+      background: rgba(10, 8, 9, 0.96);
+    }
+    .gallery-modal.is-open { display: block; }
+    .close-modal {
+      position: fixed;
+      top: 18px;
+      right: 22px;
+      z-index: 12001;
+      width: 50px;
+      height: 50px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      color: white;
+      font-size: 36px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .close-modal:hover { background: var(--primary); }
+    .modal-grid {
+      width: min(100%, 1160px);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin: auto;
+    }
+    .modal-grid img {
+      width: 100%;
+      height: 245px;
+      display: block;
+      border-radius: 9px;
+      background: #2d2d2d;
+      object-fit: cover;
+    }
+
+
+    /* Value proposition and call to action */
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .benefit {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: var(--shadow-sm);
+    }
+    .benefit-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: 12px;
+      background: var(--surface-soft);
+      color: var(--primary);
+      font-size: 1.35rem;
+      font-weight: 900;
+    }
+    .benefit h3 { margin: 0 0 8px; font-size: 1.12rem; }
+    .benefit p { margin: 0; color: var(--muted); font-size: 0.94rem; }
+    .cta-panel {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 25px;
+      padding: clamp(28px, 5vw, 48px);
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--secondary-dark), #341b3c);
+      color: white;
+      box-shadow: var(--shadow-lg);
+    }
+    .cta-panel::after {
+      content: "✦";
+      position: absolute;
+      right: 18%;
+      top: -54px;
+      color: rgba(255,255,255,0.07);
+      font-size: 13rem;
+      line-height: 1;
+    }
+    .cta-panel h2 { padding: 0; color: white; }
+    .cta-panel h2::after { display: none; }
+    .cta-panel p { max-width: 690px; margin: 10px 0 0; color: #eadff0; }
+    .cta-panel .btn { position: relative; z-index: 1; min-width: 210px; }
+    .faq-list { max-width: 860px; margin: auto; }
+    .faq-list details {
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      background: white;
+      box-shadow: 0 4px 14px rgba(44,33,38,0.05);
+    }
+    .faq-list summary {
+      position: relative;
+      padding: 18px 52px 18px 20px;
+      color: var(--heading);
+      font-weight: 750;
+      cursor: pointer;
+      list-style: none;
+    }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after {
+      content: "+";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      color: var(--primary);
+      font-size: 1.45rem;
+      transform: translateY(-50%);
+    }
+    .faq-list details[open] summary::after { content: "−"; }
+    .faq-answer { padding: 0 20px 20px; color: var(--muted); }
+    .faq-answer p { margin: 0; }
+
+    /* Footer */
+    footer {
+      padding: 56px 0 28px;
+      background: var(--dark);
+      color: #f7f3f5;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr 0.85fr;
+      gap: 36px;
+    }
+    .footer-col h3 {
+      margin: 0 0 17px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid rgba(255,255,255,0.16);
+      color: #ff9a4f;
+      font-size: 1.1rem;
+    }
+    .footer-col p { margin: 0 0 9px; }
+    .footer-col ul { margin: 0; padding: 0; list-style: none; }
+    .footer-col li { margin-bottom: 9px; color: #ded7da; }
+    .footer-col a { color: white; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .footer-bottom {
+      margin-top: 36px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.16);
+      color: #d3cbce;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* Floating WhatsApp button */
+    .floating-whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 8000;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 19px;
+      border-radius: 999px;
+      background: var(--green);
+      color: white;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      text-decoration: none;
+      font-weight: 750;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+    .floating-whatsapp:hover { background: var(--green-hover); transform: translateY(-2px); }
+    .floating-whatsapp svg { width: 25px; height: 25px; flex: 0 0 auto; fill: currentColor; }
+
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    @media (max-width: 980px) {
+      .desktop-nav { display: none; }
+      .hero-inner { grid-template-columns: 1fr; min-height: auto; padding-block: 60px; }
+      .hero-copy { max-width: 760px; }
+      .hero-media { min-height: 0; max-width: 680px; }
+      .experience-badge { left: 14px; }
+      .benefit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 820px) {
+      .grid, .footer-grid, .cta-panel { grid-template-columns: 1fr; }
+      .modal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .section { padding: 56px 0; }
+      .cta-panel .btn { justify-self: start; }
+    }
+
+    @media (max-width: 600px) {
+      :root { --nav-height: 58px; }
+      .container { width: min(100% - 24px, var(--container)); }
+      .brand img { width: 34px; height: 34px; }
+      .brand span { font-size: 0.92rem; }
+      .menu-toggle { width: 42px; height: 42px; }
+      .hero-inner { padding-block: 48px; }
+      .hero h1 { letter-spacing: -1px; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .hero-media { display: none; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .trust-item { padding: 15px 8px; }
+      .benefit-grid { grid-template-columns: 1fr; }
+      .ticker-item { padding: 10px 18px; font-size: 0.92rem; }
+      .gallery-preview { grid-template-columns: 1fr; }
+      .gallery-preview-button img { height: 255px; }
+      .modal-grid { grid-template-columns: 1fr; }
+      .modal-grid img { height: auto; max-height: 420px; }
+      .card { padding: 22px; }
+      .process-list li { padding-left: 58px; }
+      footer { padding-bottom: 100px; }
+      .floating-whatsapp {
+        right: 15px;
+        bottom: 15px;
+        width: 54px;
+        height: 54px;
+        justify-content: center;
+        padding: 0;
+      }
+      .floating-whatsapp span { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .ticker-track { width: 100%; animation: none; }
+      .ticker-item { width: 100%; overflow: hidden; text-overflow: ellipsis; }
+      .ticker-item[aria-hidden="true"] { display: none; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Kartik Swami Jyotish Kendra",
+    "image": "https://www.example.com/images/31.png",
+    "telephone": "+91-9358017501",
+    "description": "Confidential consultations in Vedic astrology, Kundli analysis, Vastu, numerology, Tarot, gemstones, and career guidance.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Shop No. 6-UG, Radhika Complex, Mau Road, Khandari",
+      "addressLocality": "Agra",
+      "addressRegion": "Uttar Pradesh",
+      "addressCountry": "IN"
+    },
+    "areaServed": "India"
   }
-
-  /* The rest of your existing CSS starts here... */
-        /* CSS Variables for a Spiritual & Professional Theme */
-        :root {
-            --primary: #d35400; /* Deep Saffron */
-            --secondary: #8e44ad; /* Spiritual Purple */
-            --dark: #2c3e50;
-            --light: #fffcf9;
-            --text: #333333;
-            --green: #25D366; /* WhatsApp Green */
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--light);
-    color: var(--text);
-    line-height: 1.6;
-    overflow-x: hidden; 
-    width: 100%; 
-}
-
-        
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--primary), #e67e22);
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-            border-bottom: 5px solid var(--secondary);
-        }
-        header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        header .tagline { font-size: 1.2rem; font-style: italic; margin-bottom: 1rem; opacity: 0.9; }
-        header .founder { font-weight: bold; background: rgba(0,0,0,0.2); padding: 5px 15px; border-radius: 20px; display: inline-block; }
-.btn-whatsapp {
-    display: inline-block;
-    background-color: var(--primary); /* Uses your Deep Saffron color */
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 15px;
-    transition: opacity 0.3s ease;
-}
-
-.btn-whatsapp:hover {
-    opacity: 0.85; /* Makes the button slightly fade when hovered over */
-}
-
-        /* Container Layout */
-        .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
-        h2 { color: var(--primary); text-align: center; margin-bottom: 1.5rem; font-size: 2rem; border-bottom: 2px solid var(--secondary); display: inline-block; padding-bottom: 5px;}
-        .section-wrapper { text-align: center; margin-bottom: 3rem; }
-
-        /* Typography & Content Boxes */
-        .text-box { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 2rem; border-left: 4px solid var(--primary); }
-        .text-box p { margin-bottom: 1rem; text-align: justify; }
-        
-        /* Grid Layouts */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-        
-        /* Service Cards */
-        .card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--secondary);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .card h3 { color: var(--dark); margin-bottom: 1rem; }
-        .card p { font-size: 0.95rem; margin-bottom: 1.5rem; color: #555; text-align: left; }
-
-        /* Pricing Elements */
-        .pricing-box { background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 15px; text-align: center; border: 1px dashed #ccc;}
-        .original-price { color: #888; text-decoration: line-through; font-size: 1.1rem; }
-        .discount { background: #e74c3c; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-left: 10px; vertical-align: top; }
-        .final-price { display: block; font-size: 1.8rem; color: var(--primary); font-weight: bold; margin-top: 5px; }
-
-        /* Buttons */
-        .btn { display: inline-block; padding: 12px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; text-align: center; width: 100%; transition: background 0.3s ease;}
-        .btn-whatsapp { background: var(--green); color: white; border: 2px solid var(--green); }
-        .btn-whatsapp:hover { background: white; color: var(--green); }
-        
-        /* Footer */
-        footer { background: var(--dark); color: white; padding: 3rem 1rem; margin-top: 3rem; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; }
-        .footer-col h4 { color: var(--primary); margin-bottom: 1rem; border-bottom: 1px solid #444; padding-bottom: 5px;}
-        .footer-col ul { list-style: none; padding-left: 0; }
-        .footer-col ul li { margin-bottom: 10px; text-align: left;}
-        .contact-info { margin-top: 20px; font-size: 1.1rem; text-align: left; }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            .grid { grid-template-columns: 1fr; }
-        }
-        /* SIDEBAR STYLES - BRAND MATCHED */
-.side-menu {
-  height: 100%;
-  width: 0; /* Hidden by default */
-  position: fixed;
-  z-index: 10000; 
-  top: 0;
-  right: 0; /* Slides in from the right side */
-  background-color: #2a1f24; /* Matches your scrolling ticker background */
-  overflow-x: hidden;
-  transition: 0.4s ease; 
-  display: flex;
-  flex-direction: column;
-  box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.side-menu-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.side-logo {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  background-color: white; /* Adds a white background if your logo is dark */
-  border-radius: 4px;
-  padding: 2px;
-}
-
-.close-btn {
-  color: #ffffff; 
-  font-size: 35px;
-  cursor: pointer;
-  line-height: 1;
-  transition: 0.2s;
-}
-
-.close-btn:hover {
-  color: #cccccc;
-}
-
-.side-menu-links {
-  display: flex;
-  flex-direction: column;
-  padding: 15px 0;
-  flex-grow: 1;
-}
-
-.side-menu-links a {
-  padding: 12px 25px;
-  text-decoration: none;
-  font-size: 17px;
-  font-weight: 500;
-  color: #f1f1f1;
-  transition: 0.2s;
-  letter-spacing: 0.5px;
-}
-
-.side-menu-links a:hover {
-  background-color: rgba(255,255,255,0.1);
-  padding-left: 30px; /* Slight indent effect on hover */
-}
-
-.side-menu-footer {
-  padding: 25px;
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.book-btn {
-  color: #ffffff; 
-  background-color: #25D366; /* WhatsApp Green */
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 16px;
-  display: inline-block;
-  transition: 0.2s;
-}
-
-.book-btn:hover {
-  background-color: #1ebd5c;
-}
-    </style>
+  </script>
 </head>
 <body>
-    <!-- SIDEBAR MENU START -->
-<div id="sideMenu" class="side-menu">
-  <div class="side-menu-header">
-    <img src="images/33.png" alt="Kartik Swami Logo" class="side-logo">
-    <span class="close-btn" onclick="closeMenu()">&times;</span>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div id="pageBackdrop" class="page-backdrop" aria-hidden="true"></div>
+
+  <aside id="sideMenu" class="side-menu" aria-label="Main navigation" aria-hidden="true">
+    <div class="side-menu-header">
+      <img src="images/33.png" alt="" class="side-logo" width="44" height="44">
+      <button id="closeMenuButton" class="icon-button" type="button" aria-label="Close navigation menu">&times;</button>
+    </div>
+
+    <nav class="side-menu-links" aria-label="Website sections">
+      <a href="#home">Home</a>
+      <a href="#services">Astrology</a>
+      <a href="#kundli">Kundli</a>
+      <a href="#vastu">Vastu</a>
+      <a href="#numerology">Numerology</a>
+      <a href="#tarot">Tarot</a>
+      <a href="#gemstone">Gemstones</a>
+      <a href="#career">Career &amp; Business</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+
+    <div class="side-menu-footer">
+      <a class="btn btn-whatsapp" href="https://wa.me/919358017501?text=Hello%20Pandit%20Ji%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer">Book Consultation</a>
+    </div>
+  </aside>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#home" aria-label="Kartik Swami Jyotish Kendra home">
+        <img src="images/33.png" alt="Kartik Swami Jyotish Kendra logo" width="38" height="38">
+        <span>Kartik Swami Jyotish Kendra</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="https://wa.me/919358017501?text=Hello%20Pandit%20Ji%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer">Book Now</a>
+      </nav>
+      <button id="menuToggle" class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="sideMenu" aria-expanded="false">&#9776;</button>
+    </div>
+  </header>
+
+  <section id="home" class="hero" aria-labelledby="heroTitle">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="hero-kicker">Traditional wisdom, practical guidance</p>
+        <h1 id="heroTitle">Clarity for Life, Career, Business &amp; Home</h1>
+        <p class="hero-lead">Confidential consultations in Vedic Astrology, Kundli, Vastu, Numerology, Tarot, and Gemstone guidance, available from Agra and online.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/919358017501?text=Hello%20Pandit%20Ji%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer">Book on WhatsApp</a>
+          <a class="btn btn-secondary" href="#services">Explore Services</a>
+        </div>
+        <ul class="hero-points" aria-label="Consultation benefits">
+          <li>Private consultation</li>
+          <li>Clear guidance</li>
+          <li>Online support</li>
+        </ul>
+      </div>
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-media-card">
+          <img src="images/31.png" alt="" width="760" height="720" fetchpriority="high">
+          <div class="experience-badge"><strong>25+ Years</strong>of trusted guidance</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-strip" aria-label="Service highlights">
+    <div class="container trust-grid">
+      <div class="trust-item"><strong>25+ Years</strong><span>Experience</span></div>
+      <div class="trust-item"><strong>Confidential</strong><span>Private guidance</span></div>
+      <div class="trust-item"><strong>Online &amp; In Person</strong><span>Flexible consultation</span></div>
+      <div class="trust-item"><strong>Agra, India</strong><span>Trusted local centre</span></div>
+    </div>
+  </section>
+
+  <div class="ticker" role="region" aria-label="Services overview">
+    <div class="ticker-track">
+      <div class="ticker-item">25+ Years of Trusted Astrology &nbsp; | &nbsp; Kundli &nbsp; | &nbsp; Vastu &nbsp; | &nbsp; Numerology &nbsp; | &nbsp; Tarot &nbsp; | &nbsp; Book Your Consultation Today &nbsp; | &nbsp;</div>
+      <div class="ticker-item" aria-hidden="true">25+ Years of Trusted Astrology &nbsp; | &nbsp; Kundli &nbsp; | &nbsp; Vastu &nbsp; | &nbsp; Numerology &nbsp; | &nbsp; Tarot &nbsp; | &nbsp; Book Your Consultation Today &nbsp; | &nbsp;</div>
+    </div>
   </div>
-  
-  <div class="side-menu-links">
-    <a href="#home" onclick="closeMenu()">Home</a>
-    <a href="#services" onclick="closeMenu()">Astrology</a>
-    <a href="#kundli" onclick="closeMenu()">Kundli</a>
-    <a href="#vastu" onclick="closeMenu()">Vastu</a>
-    <a href="#numerology" onclick="closeMenu()">Numerology</a>
-    <a href="#tarot" onclick="closeMenu()">Tarot</a>
-    <a href="#gemstone" onclick="closeMenu()">Gemstones</a>
-    <a href="#career" onclick="closeMenu()">Career & Business</a>
-    <a href="#gallery" onclick="closeMenu()">Gallery</a>
-    <a href="#contact" onclick="closeMenu()">Contact Us</a>
-  </div>
 
-  
-  <div class="side-menu-footer">
-    <a href="https://wa.me/919837201252?text=Hello%20Pandit%20Ji,%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" class="book-btn">Book Consultation</a>
-  </div>
-</div>
-<!-- SIDEBAR MENU END -->
-
-   <!-- TOP NAVIGATION BAR START -->
-<div style="background-color: #ffffff; padding: 12px 20px; display: flex; align-items: center; border-bottom: 1px solid #e0e0e0; position: sticky; top: 0; z-index: 1000;">
-  <!-- Small Logo Icon -->
-  <img src="images/33.png" alt="Kartik Swami Logo" style="width: 25px; height: 25px; object-fit: contain; margin-right: 12px; border-radius: 4px;"> 
-  <!-- Site Title -->
-  <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 600; font-size: 15px; color: #333333;">Kartik Swami Jyotish Kendra</span>
-    <!-- HAMBURGER MENU BUTTON -->
-<span style="font-size: 28px; cursor: pointer; color: #333333; margin-left: auto;" onclick="openMenu()">&#9776;</span>
-</div>
-<!-- TOP NAVIGATION BAR END -->
-
-<!-- MAIN BANNER START -->
-<div id="home" style="width: 100%;">
-  <img src="images/31.png" alt="Free Career Astrology Snapshot Banner" style="width: 100%; height: auto; display: block;">
-</div>
-<!-- MAIN BANNER END -->
-<!-- SCROLLING TICKER START -->
-<div style="background-color: #2a1f24; color: #ffffff; padding: 12px 0;">
-  <marquee behavior="scroll" direction="left" scrollamount="6" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap; padding-right: 2rem;">
-    25+ Years of Trusted Astrology &nbsp;&nbsp;|&nbsp;&nbsp; Kundli &nbsp;&nbsp;|&nbsp;&nbsp; Vastu &nbsp;&nbsp;|&nbsp;&nbsp; Numerology &nbsp;&nbsp;|&nbsp;&nbsp; Tarot &nbsp;&nbsp;|&nbsp;&nbsp; Book Your Consultation Today &nbsp;&nbsp;|&nbsp;&nbsp; 25+ Years of Trusted Astrology &nbsp;&nbsp;|&nbsp;&nbsp; Kundli &nbsp;&nbsp;|&nbsp;&nbsp; Vastu &nbsp;&nbsp;|&nbsp;&nbsp; Numerology &nbsp;&nbsp;|&nbsp;&nbsp; Tarot &nbsp;&nbsp;|&nbsp;&nbsp; Book Your Consultation Today &nbsp;&nbsp;|&nbsp;&nbsp; 25+ Years of Trusted Astrology &nbsp;&nbsp;|&nbsp;&nbsp; Kundli &nbsp;&nbsp;|&nbsp;&nbsp; Vastu &nbsp;&nbsp;|&nbsp;&nbsp; Numerology &nbsp;&nbsp;|&nbsp;&nbsp; Tarot &nbsp;&nbsp;|&nbsp;&nbsp; Book Your Consultation Today &nbsp;&nbsp;|&nbsp;&nbsp; 25+ Years of Trusted Astrology &nbsp;&nbsp;|&nbsp;&nbsp; Kundli &nbsp;&nbsp;|&nbsp;&nbsp; Vastu &nbsp;&nbsp;|&nbsp;&nbsp; Numerology &nbsp;&nbsp;|&nbsp;&nbsp; Tarot &nbsp;&nbsp;|&nbsp;&nbsp; Book Your Consultation Today &nbsp;&nbsp;|&nbsp;&nbsp; 25+ Years of Trusted Astrology &nbsp;&nbsp;|&nbsp;&nbsp; Kundli &nbsp;&nbsp;|&nbsp;&nbsp; Vastu &nbsp;&nbsp;|&nbsp;&nbsp; Numerology &nbsp;&nbsp;|&nbsp;&nbsp; Tarot &nbsp;&nbsp;|&nbsp;&nbsp; Book Your Consultation Today
-  </marquee>
-</div>
-<!-- SCROLLING TICKER END -->
-    
-
-    
-    <div class="container">
-
-    <!-- About Section -->
-    <div class="section-wrapper">
-        <h2>About Us</h2>
+  <main id="main-content">
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Who we are</p>
+          <h2>About Us</h2>
+        </div>
         <div class="text-box">
-            <p><strong>Your Trusted Guide for Astrology, Vastu & Spiritual Consultation</strong></p>
-            <p>Kartik Swami Jyotish Kendra is a professional spiritual consultation center dedicated to helping individuals and businesses make informed life decisions through the timeless wisdom of Vedic Astrology, Vastu Shastra, Numerology, and Tarot Card Reading.</p>
-            <p>Our mission is to combine the knowledge of ancient Indian spiritual sciences with a practical and ethical consultation approach. Every consultation is conducted with honesty, confidentiality, and a genuine commitment to helping our clients gain clarity, confidence, and positive direction in life.</p>
+          <p><strong>Your Trusted Guide for Astrology, Vastu &amp; Spiritual Consultation</strong></p>
+          <p>Kartik Swami Jyotish Kendra is a professional spiritual consultation centre dedicated to helping individuals and businesses make informed life decisions through the traditional wisdom of Vedic Astrology, Vastu Shastra, Numerology, and Tarot Card Reading.</p>
+          <p>Our approach combines ancient Indian spiritual sciences with practical and ethical consultation. Every consultation is conducted with honesty, confidentiality, and a genuine commitment to helping clients gain clarity, confidence, and positive direction.</p>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <!-- Core Services with WhatsApp Booking -->
-    <div id="services" class="section-wrapper">
-        <h2>Premium Consultations</h2>
+    <section class="section" aria-labelledby="whyChooseTitle">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">A thoughtful approach</p>
+          <h2 id="whyChooseTitle">Why Choose Our Guidance</h2>
+          <p class="section-intro">Every consultation is designed to be respectful, understandable, and relevant to your concerns.</p>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit">
+            <div class="benefit-icon" aria-hidden="true">✓</div>
+            <h3>Confidential &amp; Respectful</h3>
+            <p>Your personal details and consultation remain private, with no judgment or pressure.</p>
+          </article>
+          <article class="benefit">
+            <div class="benefit-icon" aria-hidden="true">◎</div>
+            <h3>Personalized Analysis</h3>
+            <p>Guidance is based on the information and concerns you share, not a one-size-fits-all response.</p>
+          </article>
+          <article class="benefit">
+            <div class="benefit-icon" aria-hidden="true">✦</div>
+            <h3>Clear Next Steps</h3>
+            <p>Recommendations are explained in practical language so you can make your own informed decisions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Personal guidance</p>
+          <h2>Premium Consultations</h2>
+          <p class="section-intro">Choose a consultation and send a pre-filled booking request directly through WhatsApp.</p>
+        </div>
+
         <div class="grid">
-            
-            <!-- Service 1: Kundli Analysis -->
-          <div id="kundli" class="card">
-                <div>
-                    <h3>Kundli Analysis & Astrology</h3>
-                    <p>Comprehensive horoscope analysis to understand life patterns, planetary influences, strengths, challenges, and future opportunities.</p>
-                </div>
-                <div>
-                    <div class="pricing-box">
-                        <span class="original-price">₹2,100</span><span class="discount">43% OFF</span>
-                        <span class="final-price">₹1,199</span>
-                    </div>
-                    <!-- Direct secure lead generation via WhatsApp -->
-                    <a href="https://wa.me/919358017501?text=Hello,%20I%20want%20to%20book%20a%20Kundli%20Analysis%20consultation%20for%20%E2%82%B91,199." class="btn btn-whatsapp" target="_blank">Book via WhatsApp</a>
-                </div>
+          <article id="kundli" class="card">
+            <div>
+              <h3>Kundli Analysis &amp; Astrology</h3>
+              <p>Comprehensive horoscope analysis to understand life patterns, planetary influences, strengths, challenges, and future opportunities.</p>
             </div>
-
-            <!-- Service 2: Vastu Consultation -->
-           <div id="vastu" class="card">
-                <div>
-                    <h3>Complete Vastu Consultation</h3>
-                    <p>Scientific and traditional Vastu guidance for homes, offices, shops, factories, and commercial spaces to create harmony, prosperity, and positive energy.</p>
-                </div>
-                <div>
-                    <div class="pricing-box">
-                        <span class="original-price">₹21,126</span><span class="discount">29% OFF</span>
-                        <span class="final-price">₹15,000</span>
-                    </div>
-                    <!-- Direct secure lead generation via WhatsApp -->
-                    <a href="https://wa.me/919358017501?text=Hello,%20I%20want%20to%20book%20a%20Complete%20Vastu%20Consultation%20for%20%E2%82%B915,000." class="btn btn-whatsapp" target="_blank">Book via WhatsApp</a>
-                </div>
+            <div>
+              <div class="pricing-box" aria-label="Kundli consultation offer price 1,199 rupees">
+                <span class="original-price">₹2,100</span><span class="discount">43% OFF</span>
+                <span class="final-price">₹1,199</span>
+              </div>
+              <a class="btn btn-whatsapp" href="https://wa.me/919358017501?text=Hello%2C%20I%20want%20to%20book%20a%20Kundli%20Analysis%20consultation%20for%20%E2%82%B91%2C199." target="_blank" rel="noopener noreferrer">Book via WhatsApp</a>
             </div>
+          </article>
 
+          <article id="vastu" class="card">
+            <div>
+              <h3>Complete Vastu Consultation</h3>
+              <p>Traditional Vastu guidance for homes, offices, shops, factories, and commercial spaces to support harmony, prosperity, and positive energy.</p>
+            </div>
+            <div>
+              <div class="pricing-box" aria-label="Vastu consultation offer price 15,000 rupees">
+                <span class="original-price">₹21,126</span><span class="discount">29% OFF</span>
+                <span class="final-price">₹15,000</span>
+              </div>
+              <a class="btn btn-whatsapp" href="https://wa.me/919358017501?text=Hello%2C%20I%20want%20to%20book%20a%20Complete%20Vastu%20Consultation%20for%20%E2%82%B915%2C000." target="_blank" rel="noopener noreferrer">Book via WhatsApp</a>
+            </div>
+          </article>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <!-- Additional Services via WhatsApp -->
-    <div class="section-wrapper">
-        <h2>Additional Services</h2>
+    <section class="section" aria-labelledby="additionalServicesTitle">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">More services</p>
+          <h2 id="additionalServicesTitle">Additional Services</h2>
+        </div>
+
         <div class="grid">
-            
-            <div id="numerology" class="card">
-                <h3>Numerology Analysis</h3>
-                <p>Discover the influence of your birth date and name numbers to make better personal, professional, and financial decisions.</p>
-                <a href="https://wa.me/919358017501?text=Hello,%20I%20would%20like%20to%20inquire%20about%20Numerology%20Analysis." class="btn btn-whatsapp" target="_blank">Inquire via WhatsApp</a>
+          <article id="numerology" class="card">
+            <div>
+              <h3>Numerology Analysis</h3>
+              <p>Discover the influence of your birth date and name numbers to support personal, professional, and financial decisions.</p>
             </div>
+            <a class="btn btn-whatsapp" href="https://wa.me/919358017501?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20Numerology%20Analysis." target="_blank" rel="noopener noreferrer">Inquire via WhatsApp</a>
+          </article>
 
-            <div id="tarot" class="card">
-                <h3>Tarot Card Reading</h3>
-                <p>Receive intuitive guidance for important life situations, helping you gain clarity and confidence before making decisions.</p>
-                <a href="https://wa.me/919358017501?text=Hello,%20I%20would%20like%20to%20inquire%20about%20Tarot%20Card%20Reading." class="btn btn-whatsapp" target="_blank">Inquire via WhatsApp</a>
+          <article id="tarot" class="card">
+            <div>
+              <h3>Tarot Card Reading</h3>
+              <p>Receive intuitive guidance for important life situations to gain clarity and confidence before making decisions.</p>
             </div>
+            <a class="btn btn-whatsapp" href="https://wa.me/919358017501?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20Tarot%20Card%20Reading." target="_blank" rel="noopener noreferrer">Inquire via WhatsApp</a>
+          </article>
 
-            
-            <div id="gemstone" class="card">
-                <h3>Gemstone Recommendations</h3>
-                <p>Authentic gemstone guidance based on your horoscope and planetary positions. Recommendations are made only when suitable for your individual chart.</p>
-                <a href="https://wa.me/919358017501?text=Hello,%20I%20need%20Gemstone%20Recommendations." class="btn btn-whatsapp" target="_blank">Inquire via WhatsApp</a>
+          <article id="gemstone" class="card">
+            <div>
+              <h3>Gemstone Recommendations</h3>
+              <p>Gemstone guidance based on your horoscope and planetary positions. Recommendations are made only when considered suitable for your individual chart.</p>
             </div>
+            <a class="btn btn-whatsapp" href="https://wa.me/919358017501?text=Hello%2C%20I%20need%20Gemstone%20Recommendations." target="_blank" rel="noopener noreferrer">Inquire via WhatsApp</a>
+          </article>
 
-            <div id="career" class="card">
-                <h3>Career & Business Guidance</h3>
-                <p>Understand your strengths, suitable career paths, and astrological insights to support business planning, investments, and financial stability.</p>
-                <a href="https://wa.me/919358017501?text=Hello,%20I%20am%20looking%20for%20Career/Business%20Guidance." class="btn btn-whatsapp" target="_blank">Inquire via WhatsApp</a>
+          <article id="career" class="card">
+            <div>
+              <h3>Career &amp; Business Guidance</h3>
+              <p>Understand your strengths, suitable career paths, and astrological insights to support business planning and financial decisions.</p>
             </div>
-
+            <a class="btn btn-whatsapp" href="https://wa.me/919358017501?text=Hello%2C%20I%20am%20looking%20for%20Career%20or%20Business%20Guidance." target="_blank" rel="noopener noreferrer">Inquire via WhatsApp</a>
+          </article>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <!-- Process Section -->
-    <div class="section-wrapper">
-        <h2>Our Consultation Process</h2>
-        <div class="text-box" style="border-left-color: var(--secondary); text-align: left;">
-            <ul style="list-style-type: none; padding-left: 0;">
-                <li style="margin-bottom: 15px;"><strong>Step 1 – Client Information:</strong> We collect essential details including your Name, DOB, Time of Birth, Place of Birth, and your specific concerns.</li>
-                <li style="margin-bottom: 15px;"><strong>Step 2 – Detailed Analysis:</strong> Our expert carefully studies your case through Horoscope Analysis, Planetary Positions, and Vastu Assessments.</li>
-                <li style="margin-bottom: 15px;"><strong>Step 3 – Personal Consultation:</strong> We explain current life situations, planetary influences, and provide answers to your specific questions.</li>
-                <li style="margin-bottom: 15px;"><strong>Step 4 – Personalized Guidance:</strong> Recommendations may include Astrological Remedies, Vastu Suggestions, Numerology Corrections, or Gemstone Guidance.</li>
-                <li><strong>Step 5 – Follow-Up Support:</strong> We remain available for follow-up consultations to review progress and provide additional guidance.</li>
-            </ul>
+    <section id="process" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">What to expect</p>
+          <h2>Our Consultation Process</h2>
         </div>
+        <div class="text-box" style="border-left-color: var(--secondary);">
+          <ol class="process-list">
+            <li><strong>Client Information:</strong> We collect essential details including your name, date of birth, time of birth, place of birth, and specific concerns.</li>
+            <li><strong>Detailed Analysis:</strong> The case is studied through horoscope analysis, planetary positions, or Vastu assessment, depending on the service selected.</li>
+            <li><strong>Personal Consultation:</strong> Current situations and relevant influences are explained, followed by answers to your specific questions.</li>
+            <li><strong>Personalized Guidance:</strong> Suggestions may include astrological practices, Vastu improvements, numerology corrections, or gemstone guidance.</li>
+            <li><strong>Follow-Up Support:</strong> Follow-up consultations may be arranged to review progress and provide additional clarification.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Moments and work</p>
+          <h2>Our Gallery</h2>
+          <p class="section-intro">Select a preview or use the button to open all 28 available photographs.</p>
+        </div>
+
+        <div class="gallery-preview">
+          <button class="gallery-preview-button" type="button" data-open-gallery aria-label="Open full photo gallery">
+            <img src="images/25.jpg" alt="Kartik Swami Jyotish Kendra gallery preview" width="600" height="400" loading="lazy">
+          </button>
+          <button class="gallery-preview-button" type="button" data-open-gallery aria-label="Open full photo gallery">
+            <img src="images/7.jpg" alt="Astrology consultation gallery preview" width="600" height="400" loading="lazy">
+          </button>
+        </div>
+        <div class="gallery-action">
+          <button class="btn view-more-btn" type="button" data-open-gallery>+ See All 28 Photos</button>
+        </div>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="faqTitle">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Common questions</p>
+          <h2 id="faqTitle">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>What details are needed for a Kundli consultation?</summary>
+            <div class="faq-answer"><p>Please share your name, date of birth, exact or closest-known time of birth, place of birth, and the main questions you would like to discuss.</p></div>
+          </details>
+          <details>
+            <summary>Can I take a consultation online?</summary>
+            <div class="faq-answer"><p>Yes. You can contact us through WhatsApp to discuss the available online consultation options and suitable timings.</p></div>
+          </details>
+          <details>
+            <summary>Are consultations confidential?</summary>
+            <div class="faq-answer"><p>Yes. Personal information and consultation details are treated as confidential.</p></div>
+          </details>
+          <details>
+            <summary>How do I book and confirm the consultation?</summary>
+            <div class="faq-answer"><p>Select a service and send the pre-filled WhatsApp message. The consultation time, required information, and payment details can then be confirmed directly.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Book a consultation">
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <h2>Ready to Discuss Your Questions?</h2>
+            <p>Send a WhatsApp message to request a consultation. Please avoid sharing sensitive personal information until your booking has been confirmed.</p>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/919358017501?text=Hello%20Pandit%20Ji%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer">Request Consultation</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="fullGallery" class="gallery-modal" role="dialog" aria-modal="true" aria-labelledby="galleryModalTitle" aria-hidden="true">
+    <h2 id="galleryModalTitle" class="visually-hidden">Full photo gallery</h2>
+    <button id="closeGalleryButton" class="close-modal" type="button" aria-label="Close photo gallery">&times;</button>
+    <div class="modal-grid">
+      <img src="images/1.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 1" loading="lazy">
+      <img src="images/2.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 2" loading="lazy">
+      <img src="images/3.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 3" loading="lazy">
+      <img src="images/4.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 4" loading="lazy">
+      <img src="images/5.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 5" loading="lazy">
+      <img src="images/6.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 6" loading="lazy">
+      <img src="images/7.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 7" loading="lazy">
+      <img src="images/8.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 8" loading="lazy">
+      <img src="images/9.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 9" loading="lazy">
+      <img src="images/10.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 10" loading="lazy">
+      <img src="images/11.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 11" loading="lazy">
+      <img src="images/12.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 12" loading="lazy">
+      <img src="images/13.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 13" loading="lazy">
+      <img src="images/14.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 14" loading="lazy">
+      <img src="images/15.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 15" loading="lazy">
+      <img src="images/16.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 16" loading="lazy">
+      <img src="images/17.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 17" loading="lazy">
+      <img src="images/18.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 18" loading="lazy">
+      <img src="images/20.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 20" loading="lazy">
+      <img src="images/21.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 21" loading="lazy">
+      <img src="images/22.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 22" loading="lazy">
+      <img src="images/23.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 23" loading="lazy">
+      <img src="images/24.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 24" loading="lazy">
+      <img src="images/25.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 25" loading="lazy">
+      <img src="images/26.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 26" loading="lazy">
+      <img src="images/27.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 27" loading="lazy">
+      <img src="images/28.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 28" loading="lazy">
+      <img src="images/29.jpg" alt="Kartik Swami Jyotish Kendra gallery photo 29" loading="lazy">
     </div>
-
-</div>
-
-<!-- Footer -->
-    <!-- LIGHTBOX GALLERY START -->
-<style>
-  /* Styling for the 2 preview photos on the main page */
-  .gallery-preview {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin: 20px auto;
-    padding: 0 20px;
-    max-width: 800px;
-  }
-  .gallery-preview img {
-    width: 45%;
-    min-width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  .gallery-preview img:hover {
-    transform: scale(1.03);
-  }
-  
-  /* The Plus Button */
-  .view-more-btn {
-    display: block;
-    margin: 10px auto 40px auto;
-    padding: 12px 30px;
-    background-color: #ff9900;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
-  .view-more-btn:hover {
-    background-color: #e68a00;
-  }
-
-  /* Styling for the Separate Space (Modal) */
-  .gallery-modal {
-    display: none; /* Hidden by default until clicked */
-    position: fixed;
-    z-index: 99998;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.9); /* Dark background */
-    overflow-y: auto; /* Allows scrolling inside the gallery */
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-  .modal-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    padding: 20px;
-    max-width: 1100px;
-    margin: auto;
-  }
-  .modal-grid img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  
-  /* The Close (X) Button */
-  .close-modal {
-    position: fixed;
-    top: 15px;
-    right: 25px;
-    color: white;
-    font-size: 50px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 99999;
-    padding: 15px;
-  }
-  .close-modal:hover {
-    color: #ff9900;
-  }
-  /* Prevents floating WhatsApp widget from covering footer text on mobile */
-@media (max-width: 768px) {
-    body {
-        padding-bottom: 80px; 
-    }
-}
-  
-</style>
-
-<h2 id="gallery" style="text-align: center; color: #ff9900; margin-top: 40px;">Our Gallery</h2>
-
-<!-- 1. The Preview Section (What people see first) -->
-<div class="gallery-preview">
-  <img src="images/25.jpg" alt="Preview 1" onclick="openGallery()">
-  <img src="images/7.jpg" alt="Preview 2" onclick="openGallery()">
-</div>
-<button class="view-more-btn" onclick="openGallery()">+ See All 29 Photos</button>
-
-<!-- 2. The Hidden Separate Space (Opens when clicked) -->
-<div id="fullGallery" class="gallery-modal">
-  <span class="close-modal" onclick="closeGallery()">&times;</span>
-  <div class="modal-grid">
-    <img src="images/1.jpg" alt="Gallery 1" loading="lazy">
-    <img src="images/2.jpg" alt="Gallery 2" loading="lazy">
-    <img src="images/3.jpg" alt="Gallery 3" loading="lazy">
-    <img src="images/4.jpg" alt="Gallery 4" loading="lazy">
-    <img src="images/5.jpg" alt="Gallery 5" loading="lazy">
-    <img src="images/6.jpg" alt="Gallery 6" loading="lazy">
-    <img src="images/7.jpg" alt="Gallery 7" loading="lazy">
-    <img src="images/8.jpg" alt="Gallery 8" loading="lazy">
-    <img src="images/9.jpg" alt="Gallery 9" loading="lazy">
-    <img src="images/10.jpg" alt="Gallery 10" loading="lazy">
-    <img src="images/11.jpg" alt="Gallery 11" loading="lazy">
-    <img src="images/12.jpg" alt="Gallery 12" loading="lazy">
-    <img src="images/13.jpg" alt="Gallery 13" loading="lazy">
-    <img src="images/14.jpg" alt="Gallery 14" loading="lazy">
-    <img src="images/15.jpg" alt="Gallery 15" loading="lazy">
-    <img src="images/16.jpg" alt="Gallery 16" loading="lazy">
-    <img src="images/17.jpg" alt="Gallery 17" loading="lazy">
-    <img src="images/18.jpg" alt="Gallery 18" loading="lazy">
-    <img src="images/20.jpg" alt="Gallery 20" loading="lazy">
-    <img src="images/21.jpg" alt="Gallery 21" loading="lazy">
-    <img src="images/22.jpg" alt="Gallery 22" loading="lazy">
-    <img src="images/23.jpg" alt="Gallery 23" loading="lazy">
-    <img src="images/24.jpg" alt="Gallery 24" loading="lazy">
-    <img src="images/25.jpg" alt="Gallery 25" loading="lazy">
-    <img src="images/26.jpg" alt="Gallery 26" loading="lazy">
-    <img src="images/27.jpg" alt="Gallery 27" loading="lazy">
-    <img src="images/28.jpg" alt="Gallery 28" loading="lazy">
-    <img src="images/29.jpg" alt="Gallery 29" loading="lazy">
   </div>
-</div>
 
-<!-- 3. The JavaScript that makes the buttons work -->
-<script>
-  function openGallery() {
-    document.getElementById("fullGallery").style.display = "block";
-    document.body.style.overflowY = "hidden"; /* Stops the background page from scrolling */
-  }
-  function closeGallery() {
-    document.getElementById("fullGallery").style.display = "none";
-    document.body.style.overflowY = "auto"; /* Turns background scrolling back on */
-  }
-</script>
-<!-- LIGHTBOX GALLERY END -->
-<footer>
-    <div class="footer-grid">
-        <div class="footer-col">
-         <h4 id="contact">Contact Us</h4>
-            <p><strong>Kartik Swami Jyotish Kendra</strong></p>
-            <p style="margin-top: 10px; text-align: left;">📍 Shop No. 6-UG, Radhika Complex<br>Mau Road, Khandari<br>Agra, Uttar Pradesh</p>
-            <div class="contact-info">
-                <p>📞 +91 9358017501</p>
-                <p>📞 +91 9837201252</p>
-            </div>
-        </div>
-        
-        <div class="footer-col">
-            <h4>Important Information</h4>
-            <ul style="opacity: 0.8; font-size: 0.9rem;">
-                <li>✔ All consultations are strictly confidential.</li>
-                <li>✔ Remedies are provided as guidance and should not replace professional medical, legal, or financial advice.</li>
-                <li>✔ Results may vary depending on individual circumstances and personal actions.</li>
-                <li>✔ Final decisions always remain the responsibility of the client.</li>
-            </ul>
-        </div>
-        
-        <div class="footer-col">
-            <h4>Our Core Values</h4>
-            <ul style="opacity: 0.8; font-size: 0.9rem;">
-                <li>✦ Trust & Confidentiality</li>
-                <li>✦ Honesty & Ethics</li>
-                <li>✦ Client-Centric Approach</li>
-                <li>✦ Positive Guidance</li>
-                <li>✦ Professional Excellence</li>
-            </ul>
-        </div>
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <section class="footer-col" aria-labelledby="contactTitle">
+          <h3 id="contactTitle">Contact Us</h3>
+          <p><strong>Kartik Swami Jyotish Kendra</strong></p>
+          <p>📍 Shop No. 6-UG, Radhika Complex<br>Mau Road, Khandari<br>Agra, Uttar Pradesh</p>
+          <p>📞 <a href="tel:+919358017501">+91 9358017501</a></p>
+          <p>📞 <a href="tel:+919837201252">+91 9837201252</a></p>
+        </section>
+
+        <section class="footer-col" aria-labelledby="informationTitle">
+          <h3 id="informationTitle">Important Information</h3>
+          <ul>
+            <li>✔ All consultations are strictly confidential.</li>
+            <li>✔ Guidance should not replace professional medical, legal, or financial advice.</li>
+            <li>✔ Results may vary according to individual circumstances and personal actions.</li>
+            <li>✔ Final decisions remain the responsibility of the client.</li>
+          </ul>
+        </section>
+
+        <section class="footer-col" aria-labelledby="valuesTitle">
+          <h3 id="valuesTitle">Our Core Values</h3>
+          <ul>
+            <li>✦ Trust &amp; Confidentiality</li>
+            <li>✦ Honesty &amp; Ethics</li>
+            <li>✦ Client-Centric Approach</li>
+            <li>✦ Positive Guidance</li>
+            <li>✦ Professional Excellence</li>
+          </ul>
+        </section>
+      </div>
+      <div class="footer-bottom">&copy; 2026 Kartik Swami Jyotish Kendra. All Rights Reserved.</div>
     </div>
-    <div style="text-align: center; padding-top: 20px; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.9rem; opacity: 0.8;">
-  &copy; 2026 Kartik Swami Jyotish Kendra. All Rights Reserved.
-</div>
+  </footer>
 
-</footer>
-<!-- FLOATING WHATSAPP BUTTON START -->
-<a href="https://wa.me/919837201252?text=Hello%20Pandit%20Ji,%20I%20would%20like%20to%20book%20a%20consultation." 
-   target="_blank" 
-   style="position: fixed; bottom: 25px; right: 25px; background-color: #25D366; color: white; border-radius: 50px; padding: 12px 22px; text-decoration: none; display: flex; align-items: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 600; font-size: 15px; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); z-index: 9999; transition: transform 0.2s ease-in-out;">
+  <a class="floating-whatsapp" href="https://wa.me/919358017501?text=Hello%20Pandit%20Ji%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer" aria-label="Chat with Pandit Ji on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.031 0C5.398 0 .024 5.378.024 12.012c0 2.122.553 4.195 1.603 6.02L.034 23.987l6.103-1.602c1.745.955 3.731 1.458 5.89 1.458h.005c6.634 0 12.01-5.377 12.01-12.013 0-3.216-1.252-6.241-3.528-8.515C18.238 1.04 15.213 0 12.031 0zm0 21.84c-1.794 0-3.553-.482-5.093-1.393l-.365-.216-3.784.992.993-3.69-.237-.378c-1.002-1.597-1.531-3.447-1.531-5.353 0-5.467 4.45-9.916 9.916-9.916 2.653 0 5.147 1.033 7.022 2.91 1.875 1.876 2.909 4.37 2.909 7.023 0 5.468-4.451 9.917-9.92 9.917zm5.438-7.412c-.298-.15-1.766-.87-2.037-.97-.272-.1-.47-.15-.668.15-.198.298-.767.97-.94 1.168-.173.199-.347.224-.645.075-2.038-1.03-3.32-2.22-4.22-3.753-.173-.298-.018-.458.13-.606.134-.133.298-.347.447-.52.15-.173.2-.298.299-.497.1-.198.05-.372-.025-.52-.075-.149-.668-1.611-.915-2.206-.241-.579-.486-.5-.668-.51h-.57c-.198 0-.52.074-.792.372-.272.298-1.04 1.016-1.04 2.478 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.766-.722 2.014-1.42.248-.698.248-1.296.173-1.42-.074-.124-.272-.198-.57-.347z"/></svg>
+    <span>Chat with Pandit Ji</span>
+  </a>
 
-  <!-- WhatsApp SVG Icon -->
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;">
-    <path d="M12.031 0C5.398 0 0.024 5.378 0.024 12.012c0 2.122.553 4.195 1.603 6.02L.034 23.987l6.103-1.602c1.745.955 3.731 1.458 5.89 1.458h.005c6.634 0 12.01-5.377 12.01-12.013 0-3.216-1.252-6.241-3.528-8.515C18.238 1.04 15.213 0 12.031 0zm0 21.84c-1.794 0-3.553-.482-5.093-1.393l-.365-.216-3.784.992.993-3.69-.237-.378c-1.002-1.597-1.531-3.447-1.531-5.353 0-5.467 4.45-9.916 9.916-9.916 2.653 0 5.147 1.033 7.022 2.91 1.875 1.876 2.909 4.37 2.909 7.023 0 5.468-4.451 9.917-9.92 9.917zm5.438-7.412c-.298-.15-1.766-.87-2.037-.97-.272-.1-.47-.15-.668.15-.198.298-.767.97-.94 1.168-.173.199-.347.224-.645.075-2.038-1.03-3.32-2.22-4.22-3.753-.173-.298-.018-.458.13-.606.134-.133.298-.347.447-.52.15-.173.2-.298.299-.497.1-.198.05-.372-.025-.52-.075-.149-.668-1.611-.915-2.206-.241-.579-.486-.5-.668-.51h-.57c-.198 0-.52.074-.792.372-.272.298-1.04 1.016-1.04 2.478 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.766-.722 2.014-1.42.248-.698.248-1.296.173-1.42-.074-.124-.272-.198-.57-.347z"/>
-  </svg>
-  Chat with Pandit Ji
-</a>
-<!-- FLOATING WHATSAPP BUTTON END -->
-    <script>
-  function openMenu() {
-    document.getElementById("sideMenu").style.width = "280px";
-  }
+  <script>
+    (() => {
+      "use strict";
 
-  function closeMenu() {
-    document.getElementById("sideMenu").style.width = "0";
-  }
-</script>
+      const body = document.body;
+      const sideMenu = document.getElementById("sideMenu");
+      const menuToggle = document.getElementById("menuToggle");
+      const closeMenuButton = document.getElementById("closeMenuButton");
+      const pageBackdrop = document.getElementById("pageBackdrop");
+      const gallery = document.getElementById("fullGallery");
+      const closeGalleryButton = document.getElementById("closeGalleryButton");
+      const galleryOpeners = document.querySelectorAll("[data-open-gallery]");
+      let lastFocusedElement = null;
 
+      function setPageScrollLock(locked) {
+        const anyOverlayOpen = locked || sideMenu.classList.contains("is-open") || gallery.classList.contains("is-open");
+        body.classList.toggle("no-scroll", anyOverlayOpen);
+      }
+
+      function openMenu() {
+        lastFocusedElement = document.activeElement;
+        sideMenu.classList.add("is-open");
+        sideMenu.setAttribute("aria-hidden", "false");
+        menuToggle.setAttribute("aria-expanded", "true");
+        pageBackdrop.classList.add("is-visible");
+        pageBackdrop.setAttribute("aria-hidden", "false");
+        setPageScrollLock(true);
+        closeMenuButton.focus();
+      }
+
+      function closeMenu(restoreFocus = true) {
+        sideMenu.classList.remove("is-open");
+        sideMenu.setAttribute("aria-hidden", "true");
+        menuToggle.setAttribute("aria-expanded", "false");
+        pageBackdrop.classList.remove("is-visible");
+        pageBackdrop.setAttribute("aria-hidden", "true");
+        setPageScrollLock(false);
+        if (restoreFocus && lastFocusedElement) lastFocusedElement.focus();
+      }
+
+      function openGallery(event) {
+        lastFocusedElement = event ? event.currentTarget : document.activeElement;
+        gallery.classList.add("is-open");
+        gallery.setAttribute("aria-hidden", "false");
+        setPageScrollLock(true);
+        closeGalleryButton.focus();
+      }
+
+      function closeGallery(restoreFocus = true) {
+        gallery.classList.remove("is-open");
+        gallery.setAttribute("aria-hidden", "true");
+        setPageScrollLock(false);
+        if (restoreFocus && lastFocusedElement) lastFocusedElement.focus();
+      }
+
+      function keepFocusInside(event, container) {
+        if (event.key !== "Tab") return;
+        const focusable = [...container.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')]
+          .filter(element => element.offsetParent !== null);
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+
+      menuToggle.addEventListener("click", openMenu);
+      closeMenuButton.addEventListener("click", () => closeMenu());
+      pageBackdrop.addEventListener("click", () => closeMenu());
+      sideMenu.querySelectorAll("a[href^='#']").forEach(link => {
+        link.addEventListener("click", () => closeMenu(false));
+      });
+
+      galleryOpeners.forEach(button => button.addEventListener("click", openGallery));
+      closeGalleryButton.addEventListener("click", () => closeGallery());
+      gallery.addEventListener("click", event => {
+        if (event.target === gallery) closeGallery();
+      });
+
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+          if (gallery.classList.contains("is-open")) closeGallery();
+          else if (sideMenu.classList.contains("is-open")) closeMenu();
+        }
+        if (sideMenu.classList.contains("is-open")) keepFocusInside(event, sideMenu);
+        if (gallery.classList.contains("is-open")) keepFocusInside(event, gallery);
+      });
+    })();
+  </script>
 </body>
 </html>
