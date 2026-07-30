@@ -6,17 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#b94700">
   <meta name="description" content="Kartik Swami Jyotish Kendra offers confidential consultations in Vedic astrology, Kundli analysis, Vastu, numerology, Tarot, gemstones, and career guidance in Agra and online.">
-  <meta name="robots" content="index, follow">
-
-  <!-- Replace the URL values below with your final domain before publishing. -->
-  <link rel="canonical" href="https://7kmastermac-ux.github.io/kartik-swam-jyotish/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:site_name" content="Kartik Swami Jyotish Kendra">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="images/33.png">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Kartik Swami Jyotish Kendra | Astrology & Vastu">
   <meta property="og:description" content="Confidential guidance in Kundli, Vastu, numerology, Tarot, gemstones, career, and business.">
-  <meta property="og:url" content="https://7kmastermac-ux.github.io/kartik-swam-jyotish/">
-  <meta property="og:image" content="https://7kmastermac-ux.github.io/kartik-swam-jyotish/images/31.png">
 
   <title>Kartik Swami Jyotish Kendra | Astrology & Vastu in Agra</title>
 
@@ -41,7 +40,8 @@
       --shadow-lg: 0 18px 50px rgba(18, 12, 15, 0.20);
       --radius: 14px;
       --nav-height: 64px;
-      --container: 1120px;
+      --container: 1160px;
+      --focus: #086fa1;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -61,7 +61,7 @@
     a { color: inherit; }
 
     :focus-visible {
-      outline: 3px solid #146c94;
+      outline: 3px solid var(--focus);
       outline-offset: 3px;
     }
 
@@ -808,6 +808,75 @@
     .floating-whatsapp:hover { background: var(--green-hover); transform: translateY(-2px); }
     .floating-whatsapp svg { width: 25px; height: 25px; flex: 0 0 auto; fill: currentColor; }
 
+
+    /* Reading progress and utility controls */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 20001;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary-light), var(--secondary));
+      pointer-events: none;
+    }
+    .back-to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 87px;
+      z-index: 7999;
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: white;
+      color: var(--heading);
+      box-shadow: var(--shadow-sm);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      cursor: pointer;
+      transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    }
+    .back-to-top.is-visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .back-to-top:hover { color: white; background: var(--primary); border-color: var(--primary); }
+    .service-label {
+      display: inline-block;
+      margin-bottom: 13px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 850;
+      letter-spacing: 0.55px;
+      text-transform: uppercase;
+    }
+    .consultation-note {
+      max-width: 830px;
+      margin: 25px auto 0;
+      padding: 13px 16px;
+      border: 1px solid #e9d7c9;
+      border-radius: 9px;
+      background: #fff8f1;
+      color: #5e4a3c;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .noscript-notice {
+      padding: 12px 16px;
+      background: #fff3cd;
+      color: #5e4700;
+      text-align: center;
+      font-weight: 700;
+    }
+
     .visually-hidden {
       position: absolute !important;
       width: 1px !important;
@@ -859,6 +928,7 @@
       .card { padding: 22px; }
       .process-list li { padding-left: 58px; }
       footer { padding-bottom: 100px; }
+      .back-to-top { right: 19px; bottom: 82px; }
       .floating-whatsapp {
         right: 15px;
         bottom: 15px;
@@ -889,7 +959,6 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Kartik Swami Jyotish Kendra",
-    "image": "https://www.example.com/images/31.png",
     "telephone": "+91-9358017501",
     "description": "Confidential consultations in Vedic astrology, Kundli analysis, Vastu, numerology, Tarot, gemstones, and career guidance.",
     "address": {
@@ -904,6 +973,8 @@
   </script>
 </head>
 <body>
+  <div id="readingProgress" class="reading-progress" aria-hidden="true"></div>
+  <noscript><div class="noscript-notice">JavaScript is disabled. Service information and WhatsApp links still work, but the menu and full gallery require JavaScript.</div></noscript>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <div id="pageBackdrop" class="page-backdrop" aria-hidden="true"></div>
@@ -1044,6 +1115,7 @@
         <div class="grid">
           <article id="kundli" class="card">
             <div>
+              <span class="service-label">Most Popular</span>
               <h3>Kundli Analysis &amp; Astrology</h3>
               <p>Comprehensive horoscope analysis to understand life patterns, planetary influences, strengths, challenges, and future opportunities.</p>
             </div>
@@ -1058,6 +1130,7 @@
 
           <article id="vastu" class="card">
             <div>
+              <span class="service-label">Home &amp; Business</span>
               <h3>Complete Vastu Consultation</h3>
               <p>Traditional Vastu guidance for homes, offices, shops, factories, and commercial spaces to support harmony, prosperity, and positive energy.</p>
             </div>
@@ -1070,6 +1143,7 @@
             </div>
           </article>
         </div>
+        <p class="consultation-note"><strong>Please note:</strong> Spiritual and astrological guidance is intended to support reflection and informed decision-making. It does not replace qualified medical, legal, psychological, or financial advice.</p>
       </div>
     </section>
 
@@ -1083,6 +1157,7 @@
         <div class="grid">
           <article id="numerology" class="card">
             <div>
+              <span class="service-label">Personal Insight</span>
               <h3>Numerology Analysis</h3>
               <p>Discover the influence of your birth date and name numbers to support personal, professional, and financial decisions.</p>
             </div>
@@ -1091,6 +1166,7 @@
 
           <article id="tarot" class="card">
             <div>
+              <span class="service-label">Decision Clarity</span>
               <h3>Tarot Card Reading</h3>
               <p>Receive intuitive guidance for important life situations to gain clarity and confidence before making decisions.</p>
             </div>
@@ -1099,6 +1175,7 @@
 
           <article id="gemstone" class="card">
             <div>
+              <span class="service-label">Chart Based</span>
               <h3>Gemstone Recommendations</h3>
               <p>Gemstone guidance based on your horoscope and planetary positions. Recommendations are made only when considered suitable for your individual chart.</p>
             </div>
@@ -1107,6 +1184,7 @@
 
           <article id="career" class="card">
             <div>
+              <span class="service-label">Professional Direction</span>
               <h3>Career &amp; Business Guidance</h3>
               <p>Understand your strengths, suitable career paths, and astrological insights to support business planning and financial decisions.</p>
             </div>
@@ -1239,6 +1317,8 @@
           <p>📍 Shop No. 6-UG, Radhika Complex<br>Mau Road, Khandari<br>Agra, Uttar Pradesh</p>
           <p>📞 <a href="tel:+919358017501">+91 9358017501</a></p>
           <p>📞 <a href="tel:+919837201252">+91 9837201252</a></p>
+          <p>💬 <a href="https://wa.me/919358017501?text=Hello%20Pandit%20Ji%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer">WhatsApp booking</a></p>
+          <p><small>Consultations are arranged by prior appointment.</small></p>
         </section>
 
         <section class="footer-col" aria-labelledby="informationTitle">
@@ -1262,9 +1342,11 @@
           </ul>
         </section>
       </div>
-      <div class="footer-bottom">&copy; 2026 Kartik Swami Jyotish Kendra. All Rights Reserved.</div>
+      <div class="footer-bottom">&copy; <span id="copyrightYear">2026</span> Kartik Swami Jyotish Kendra. All Rights Reserved.</div>
     </div>
   </footer>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">↑</button>
 
   <a class="floating-whatsapp" href="https://wa.me/919358017501?text=Hello%20Pandit%20Ji%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer" aria-label="Chat with Pandit Ji on WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.031 0C5.398 0 .024 5.378.024 12.012c0 2.122.553 4.195 1.603 6.02L.034 23.987l6.103-1.602c1.745.955 3.731 1.458 5.89 1.458h.005c6.634 0 12.01-5.377 12.01-12.013 0-3.216-1.252-6.241-3.528-8.515C18.238 1.04 15.213 0 12.031 0zm0 21.84c-1.794 0-3.553-.482-5.093-1.393l-.365-.216-3.784.992.993-3.69-.237-.378c-1.002-1.597-1.531-3.447-1.531-5.353 0-5.467 4.45-9.916 9.916-9.916 2.653 0 5.147 1.033 7.022 2.91 1.875 1.876 2.909 4.37 2.909 7.023 0 5.468-4.451 9.917-9.92 9.917zm5.438-7.412c-.298-.15-1.766-.87-2.037-.97-.272-.1-.47-.15-.668.15-.198.298-.767.97-.94 1.168-.173.199-.347.224-.645.075-2.038-1.03-3.32-2.22-4.22-3.753-.173-.298-.018-.458.13-.606.134-.133.298-.347.447-.52.15-.173.2-.298.299-.497.1-.198.05-.372-.025-.52-.075-.149-.668-1.611-.915-2.206-.241-.579-.486-.5-.668-.51h-.57c-.198 0-.52.074-.792.372-.272.298-1.04 1.016-1.04 2.478 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.766-.722 2.014-1.42.248-.698.248-1.296.173-1.42-.074-.124-.272-.198-.57-.347z"/></svg>
@@ -1283,6 +1365,8 @@
       const gallery = document.getElementById("fullGallery");
       const closeGalleryButton = document.getElementById("closeGalleryButton");
       const galleryOpeners = document.querySelectorAll("[data-open-gallery]");
+      const readingProgress = document.getElementById("readingProgress");
+      const backToTop = document.getElementById("backToTop");
       let lastFocusedElement = null;
 
       function setPageScrollLock(locked) {
@@ -1329,7 +1413,7 @@
       function keepFocusInside(event, container) {
         if (event.key !== "Tab") return;
         const focusable = [...container.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')]
-          .filter(element => element.offsetWidth > 0 || element.offsetHeight > 0);
+          .filter(element => element.offsetParent !== null);
         if (!focusable.length) return;
         const first = focusable[0];
         const last = focusable[focusable.length - 1];
@@ -1363,6 +1447,40 @@
         if (sideMenu.classList.contains("is-open")) keepFocusInside(event, sideMenu);
         if (gallery.classList.contains("is-open")) keepFocusInside(event, gallery);
       });
+
+      function updateScrollUtilities() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollable > 0 ? Math.min(100, Math.max(0, (scrollTop / scrollable) * 100)) : 0;
+        readingProgress.style.width = `${progress}%`;
+        backToTop.classList.toggle("is-visible", scrollTop > 650);
+      }
+
+      let scrollScheduled = false;
+      window.addEventListener("scroll", () => {
+        if (scrollScheduled) return;
+        scrollScheduled = true;
+        window.requestAnimationFrame(() => {
+          updateScrollUtilities();
+          scrollScheduled = false;
+        });
+      }, { passive: true });
+
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      document.querySelectorAll("img").forEach(image => {
+        image.addEventListener("error", () => {
+          image.hidden = true;
+          const button = image.closest("button");
+          if (button) button.hidden = true;
+        }, { once: true });
+      });
+
+      const copyrightYear = document.getElementById("copyrightYear");
+      if (copyrightYear) copyrightYear.textContent = String(new Date().getFullYear());
+      updateScrollUtilities();
     })();
   </script>
 </body>
